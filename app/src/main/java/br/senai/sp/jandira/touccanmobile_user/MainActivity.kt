@@ -31,6 +31,7 @@ import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
 import br.senai.sp.jandira.touccanmobile_user.ui.theme.TouccanMobileUserTheme
 
 class MainActivity : ComponentActivity() {
@@ -58,7 +59,8 @@ fun SignUpScreen(modifier: Modifier = Modifier) {
         Box(modifier = Modifier
             .fillMaxWidth()
             .height(320.dp)
-            .background(linear)){
+            .background(linear)
+){
             Column(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally
@@ -66,12 +68,17 @@ fun SignUpScreen(modifier: Modifier = Modifier) {
                 Image(
                     painter = painterResource(R.drawable.logo_touccan),
                     contentDescription = "",
-                    modifier = Modifier.size(300.dp).offset(y = -20.dp)
+                    modifier = Modifier
+                        .size(300.dp)
+                        .offset(y = -20.dp)
                 )
             }
         }
 
-        Canvas(modifier = Modifier.fillMaxSize().offset(y = 1520.dp, x = 3955.dp)) {
+        Canvas(modifier = Modifier
+            .fillMaxSize()
+            .offset(y = 1515.dp, x = 3955.dp)
+) {
             rotate(degrees = 114F) {
                 drawRoundRect(
                     color = Color.White,
@@ -82,7 +89,9 @@ fun SignUpScreen(modifier: Modifier = Modifier) {
             }
         }
 
-
+        Column () {
+            Text(text = "Cadastro")
+        }
     }
 
 }
