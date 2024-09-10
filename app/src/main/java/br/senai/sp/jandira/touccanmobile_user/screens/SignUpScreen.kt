@@ -63,6 +63,17 @@ fun SignUpScreen(navController: NavHostController) {
         mutableStateOf("")
     }
 
+    var isErrorState = remember {
+        mutableStateOf(false)
+    }
+    var messageErrorState = remember {
+        mutableStateOf("")
+    }
+
+    var showPasswordState = remember {
+        mutableStateOf(false)
+    }
+
     Surface (modifier = Modifier.fillMaxSize(), color = Color(0xffEBEBEB)) {
         Column (
             modifier = Modifier
